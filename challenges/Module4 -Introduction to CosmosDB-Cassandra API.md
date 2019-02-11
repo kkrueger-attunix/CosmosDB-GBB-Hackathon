@@ -16,7 +16,7 @@ Before you can create a document database, you need to create a Cassandra accoun
 
 4. The account creation takes a few minutes. Wait for the portal to display the page saying Congratulations! Your Azure Cosmos DB account was created.<br/>
 
-## 2. Upload sample data using cql
+## 2. Upload and Query sample data using cql
 
 1.	Launch Windows RDP and Download CSV from https://experienceazure.blob.core.windows.net/software/cassandra-contacts.csv.
 
