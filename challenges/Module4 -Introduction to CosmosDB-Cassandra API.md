@@ -24,7 +24,7 @@ You need to create a keyspace and table for inserting and querying the the data 
 
 2. Click on Azure Cosmos DB icon, then select your azure cosmos db and click on Data Explore. Click on **New Keyspace** and give the setting values as per below:
 
-<img src="images/cqlsh4.jpg"/><br/>
+<img src="images/cqlsh6.jpg"/><br/>
 
 3. Once your **KeySpace** is ready, click on **New Table** for creating table and provide following instuctions :<br/>
 
@@ -36,7 +36,7 @@ c. Query :<br/>
 (id text PRIMARY KEY, firstname text, lastname text, companyname text, address text, city text, country text, state text, zipcode text,phone text)
 ```
 
-<img src="images/cqlsh6.jpg"/><br/>
+<img src="images/cqlsh5.jpg"/><br/>
 
 
 ## 3. Upload and Query sample data using cql
