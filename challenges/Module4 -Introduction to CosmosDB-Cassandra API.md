@@ -23,9 +23,10 @@ Before you can create a document database, you need to create a Cassandra accoun
 2.	Launch Command Promote as Admin.
 
 3. Change the directory using folowing command: <br/>
-Cd C:\Program Files\DataStax-DDC\apache-cassandra\bin
-
-4. Run following command
+```
+cd C:\Program Files\DataStax-DDC\apache-cassandra\bin
+```
+4. Run the following command
 ```
 cqlsh.py amitcql.cassandra.cosmos.azure.com 10350 -u amitcql -p 1mSiFNcCHIMG0TWwV3uMEqj44O10smYiaksf1vOZ1AnTHfPNEht1xFtCgSv3eAAIaSOY8AlysllayLMT69us9Q== --ssl --cqlversion=3.4.4
 ```
