@@ -57,26 +57,26 @@ set SSL_VALIDATE=false
 ```
 <img src="images/ssl.jpg"/><br/>
 
-5. Go to Azure cosmos db, select the connection string and copy CONTACT POINT, USERNAME and PRIMARY PASSWORD. Paste these values for use in Notepad.
+5. Go to Azure cosmos db, select the connection string and copy **CONTACT POINT**, **USERNAME** and **PRIMARY PASSWORD**. Paste these values for use in Notepad.<br/>
 
 <img src="images/cassandra1.jpg"/><br/>
 
-5. Run the following command for connecting to Azure cosmos Cassandra API.
+6. Run the following command for connecting to Azure cosmos Cassandra API.<br/>
 
 ```
 cqlsh.py <CONTACT POINT> -u <USERNAME> -p <PRIMARY PASSWORD> --ssl --cqlversion=3.4.4
 ```
 <img src="images/cqlsh7.jpg"/><br/>
-5. Use following command to uploading data to azure cosmos db:
+7. Use following command to uploading data to azure cosmos db:<br/>
 
 ```
 COPY info.address FROM 'cassandra-contacts.csv' WITH DELIMITER=',' AND HEADER=TRUE;
 ```
 <img src="images/copy.jpg"/><br/>
 
-6. Launch the Azure Portal, go to your azure cosmos db account, select Data Explorer and refresh the data. You will see that the data has been uploaded.
+8. Launch the Azure Portal, go to your azure cosmos db account, select Data Explorer and refresh the data. You will see that the data has been uploaded.<br/>
 
 <img src="images/cqlsh2.jpg"/><br/>
-7. Click on Rows > CQL Query Text and Click Run
+8. Click on Rows > CQL Query Text and Click Run<br/>
 
 <img src="images/cqlsh3.jpg"/><br/>
