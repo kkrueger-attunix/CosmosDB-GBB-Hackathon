@@ -22,8 +22,9 @@ Before you can create a document database, you need to create a Cassandra accoun
 
 2.	Launch Command Promote as Admin.
 
-3. Change the directory 
+3. Change the directory using folowing command: <br/>
 Cd C:\Program Files\DataStax-DDC\apache-cassandra\bin
+
 4. Run following command
 ```
 cqlsh.py amitcql.cassandra.cosmos.azure.com 10350 -u amitcql -p 1mSiFNcCHIMG0TWwV3uMEqj44O10smYiaksf1vOZ1AnTHfPNEht1xFtCgSv3eAAIaSOY8AlysllayLMT69us9Q== --ssl --cqlversion=3.4.4
@@ -36,14 +37,9 @@ COPY info.addressbook FROM 'cassandra-contacts.csv' WITH DELIMITER=',' AND HEADE
 ```
 <img src="images/cqlsh1.jpg"/><br/>
 
-6. Launch azure portal, go to your azure cosmos db account select Data Explore and refresh the data. you will see that data is uploaded
+6. Launch the Azure Portal, go to your azure cosmos db account, select Data Explorer and refresh the data. You will see that the data has been uploaded.
 
 <img src="images/cqlsh2.jpg"/><br/>
 7. Click on Rows > CQL Query Text and Click Run
 
-<img src="images/cqlsh23.jpg"/><br/>
-
-
-
-
-
+<img src="images/cqlsh3.jpg"/><br/>
