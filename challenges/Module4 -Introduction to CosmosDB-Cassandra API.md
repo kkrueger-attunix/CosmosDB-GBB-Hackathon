@@ -43,23 +43,36 @@ c. Query :<br/>
 
 1.	Launch Windows RDP and Download CSV from https://experienceazure.blob.core.windows.net/software/cassandra-contacts.csv.
 
-2.	Launch Command Promote as Admin.
+2.	Launch Command Promote as Administrator.
 
 3. Change the directory using folowing command: <br/>
 ```
 cd C:\Program Files\DataStax-DDC\apache-cassandra\bin
 ```
-4. Run the following command
+4. Run the following commands for SSL certification <br/>
 ```
-cqlsh.py amitcql.cassandra.cosmos.azure.com 10350 -u amitcql -p 1mSiFNcCHIMG0TWwV3uMEqj44O10smYiaksf1vOZ1AnTHfPNEht1xFtCgSv3eAAIaSOY8AlysllayLMT69us9Q== --ssl --cqlversion=3.4.4
+set SSL_VERSION=TLSv1_2
+set SSL_VALIDATE=false
+
 ```
-<img src="images/cqlsh.jpg"/><br/>
+<img src="images/ssl.jpg"/><br/>
+
+5. Go to Azure cosmos db, select the connection string and copy CONTACT POINT, USERNAME and PRIMARY PASSWORD. Paste these values for use in Notepad.
+
+<img src="images/cassandra1.jpg"/><br/>
+
+5. Run the following command for connecting to Azure cosmos Cassandra API.
+
+```
+cqlsh.py <CONTACT POINT> -u <USERNAME> -p <PRIMARY PASSWORD> --ssl --cqlversion=3.4.4
+```
+<img src="images/cqlsh7.jpg"/><br/>
 5. Use following command to uploading data to azure cosmos db:
 
 ```
-COPY info.addressbook FROM 'cassandra-contacts.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+COPY info.address FROM 'cassandra-contacts.csv' WITH DELIMITER=',' AND HEADER=TRUE;
 ```
-<img src="images/cqlsh1.jpg"/><br/>
+<img src="images/copy.jpg"/><br/>
 
 6. Launch the Azure Portal, go to your azure cosmos db account, select Data Explorer and refresh the data. You will see that the data has been uploaded.
 
