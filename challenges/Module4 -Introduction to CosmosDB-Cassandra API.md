@@ -16,7 +16,7 @@ Before you can create a document database, you need to create a Cassandra accoun
 
 4. The account creation takes a few minutes. Wait for the portal to display the page saying Congratulations! Your Azure Cosmos DB account was created.<br/>
 
-## 3. Create Keysapce and Table 
+## 2. Create Keysapce and Table 
 
 You need to create a keyspace and table for inserting and querying the the data using CQL.
 
@@ -24,14 +24,22 @@ You need to create a keyspace and table for inserting and querying the the data 
 
 2. Click on Azure Cosmos DB icon, then select your azure cosmos db and click on Data Explore. Click on **New Keyspace** and give the setting values as per below:
 
-<img src="images/cqlsh4.jpg"/><br/>
+<img src="images/cqlsh41.jpg"/><br/>
 
 3. Once your **KeySpace** is ready, click on **New Table** for creating table and provide following instuctions :
 
-<img src="images/cqlsh5.jpg"/><br/>
+a. Keyspace Name : **info**
+b. Create Table info : **address**
+c. Query :
+
+```
+(id text PRIMARY KEY, firstname text, lastname text, companyname text, address text, city text, country text, state text, zipcode text,phone text)
+```
+
+<img src="images/cqlsh6.jpg"/><br/>
 
 
-## 2. Upload and Query sample data using cql
+## 3. Upload and Query sample data using cql
 
 1.	Launch Windows RDP and Download CSV from https://experienceazure.blob.core.windows.net/software/cassandra-contacts.csv.
 
