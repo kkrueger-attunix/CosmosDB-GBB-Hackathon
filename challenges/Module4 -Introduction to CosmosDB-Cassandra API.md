@@ -11,7 +11,7 @@ Before you can create a document database, you need to create a Cassandra accoun
 3. In the Create Azure Cosmos DB Account page, enter the settings for the new Azure Cosmos DB account.<br/>
 <img src="images/cassandra.jpg"/><br/>
 
-   Select on **Review and Create**<br/>
+   Click on **Review and Create**<br/>
 <img src="images/casandra1.jpg"/><br/>
 
 4. The account creation takes a few minutes. Wait for the portal to display the page saying Congratulations! Your Azure Cosmos DB account was created.<br/>
