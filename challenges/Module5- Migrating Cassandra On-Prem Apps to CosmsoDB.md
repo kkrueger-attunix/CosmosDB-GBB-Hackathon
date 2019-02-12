@@ -39,11 +39,12 @@ CREATE TABLE IF NOT EXISTS sarathlal.addressbook
  
 5. We can add “CassandraCSharpDriver” NuGet package to Shared project and server project. Both projects need this package. This package is used for creating connectivity between Blazor app and Cassandra.
  
-6. As I mentioned earlier, we will create an Address Book application. We can create AddressBook model class now. Please create a “Models” folder in the Shared project and create AddressBook class inside this folder.
-Please copy below code and paste to a new class.
+6. As I mentioned earlier, we will create an Address Book application. We can create AddressBook model class now. Please create a “Models” folder in the Shared project and create AddressBook class inside this folder
 
+* Please copy below code and paste to a new class.
+
+**AddressBook.cs**
 ```
-AddressBook.cs
 using Cassandra.Mapping.Attributes;  
   
 namespace BlazorWithCassandraAddressBook.Shared.Models  
@@ -109,14 +110,15 @@ namespace BlazorWithCassandraAddressBook.Shared.Models
 }  
 ```
 ```
-Please note that we have used “Table” and “Column” properties in this class. This is derived from “Cassandra.Mapping.Attributes” and used to mention the Table name and Column names of Cassandra table.
+Please note : we have used “Table” and “Column” properties in this class. This is derived from “Cassandra.Mapping.Attributes” and used to mention the Table name and Column names of Cassandra table.
 ```
 
 7. We can create an “IDataAccessProvider” interface now. This interface will contain all the signature of DataAccess class and we will implement this interface in our DataAccess class later.
+
+* Please copy the below code and paste to the interface.
+
+**IDataAccessProvider.cs**
 ```
-Please copy the below code and paste to the interface.
- 
-IDataAccessProvider.cs
 using System.Collections.Generic;  
 using System.Threading.Tasks;  
   
@@ -135,9 +137,8 @@ namespace BlazorWithCassandraAddressBook.Shared.Models
 
 8. We can go to our Server project and create a new folder “DataAccess”. We will create a static class “CassandraInitializer” inside this folder. This class will be called from application Startup class and this will be used to initialize our Cassandra database.
 
+**CassandraInitializer.cs**
 ```
-CassandraInitializer.cs
-
 using Cassandra;  
 using System.Diagnostics;  
 using System.Net.Security;  
@@ -183,6 +184,8 @@ namespace BlazorWithCassandraAddressBook.Server.DataAccess
 10. We can create the class “DataAccessCassandraProvider” inside the DataAccess folder. This class will implement the interface IDataAccessProvider and define all the CRUD operations. We will call these methods from our Web API controller later.
 
 * Please copy the below code and paste to class.
+
+**DataAccessCassandraProvider.cs**
 ```
 DataAccessCassandraProvider.cs
 using BlazorWithCassandraAddressBook.Shared.Models;  
@@ -256,8 +259,8 @@ namespace BlazorWithCassandraAddressBook.Server.DataAccess
 11. Please note we have defined all the CRUD operations inside above class. For that, we have used the Mapper object for inserting a Cassandra record and getting records from Cassandra. For update and delete we used Cassandra session Execute method.
 
 12. We can initiate this DataAccess provider class inside the “Startup” class using dependency injection. We will also call the “InitializeCassandraSession” method inCassandraInitializer class from this Startup class.
+**Startup.cs**
 ``` 
-Startup.cs
 using BlazorWithCassandraAddressBook.Server.DataAccess;  
 using BlazorWithCassandraAddressBook.Shared.Models;  
 using Microsoft.AspNetCore.Blazor.Server;  
@@ -414,8 +417,9 @@ void ToggleNavMenu()
     collapseNavMenu = !collapseNavMenu;    
 }    
 }    
-
+```
 17. We can add “ListAddresBooks.cshtml” Razor view now. This view will be used to display all Address Book details.
+
 **ListAddresBooks.cshtml**
 ```
 @using BlazorWithCassandraAddressBook.Shared.Models    
@@ -470,7 +474,7 @@ protected override async Task OnInitAsync()
     addressBooks = await Http.GetJsonAsync<AddressBook[]>("/api/AddressBooks/Get");    
    }      
 }   
-
+```
 * Please add the below three Razor views also.
  
 **AddAddressBook.cshtml**
