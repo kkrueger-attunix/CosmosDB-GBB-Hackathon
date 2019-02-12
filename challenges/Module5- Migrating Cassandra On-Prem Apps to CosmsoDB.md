@@ -13,7 +13,7 @@
 
 3. You can review the account details and after successful validation please click the “Create” button.
  
- <img src="casandra1/xrdp.jpg"/><br/>
+ <img src="images/casandra1.jpg"/><br/>
  
 4. It will take some to finish the deployment. You can see the status.
 
