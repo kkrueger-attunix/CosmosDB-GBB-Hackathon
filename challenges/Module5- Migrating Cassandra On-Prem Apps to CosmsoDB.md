@@ -4,19 +4,32 @@
 
 1. Please login to the Azure portal and choose to Create New Resource, Databases and Azure Cosmos DB.
  
-2. Please choose your resource group (Create a new resource group if you do not have any resource group) and give a name to Cosmos DB account. Also, choose the geographic location for the Cosmos DB account. Make sure you have chosen Cassandra as API. Currently, there are 5 APIs available in Cosmos DB.
+ <img src="images/ca1.jpg"/><br/>
+
  
+2. Please choose your resource group (Create a new resource group if you do not have any resource group) and give a name to Cosmos DB account. Also, choose the geographic location for the Cosmos DB account. Make sure you have chosen Cassandra as API. Currently, there are 5 APIs available in Cosmos DB.
+
+ <img src="images/casandra.jpg"/><br/>
+
 3. You can review the account details and after successful validation please click the “Create” button.
  
-4. It will take some to finish the deployment. You can see the status.
+ <img src="cassandra1/xrdp.jpg"/><br/>
  
+4. It will take some to finish the deployment. You can see the status.
+
+ <img src="images/ca2.jpg"/><br/>
+
 5. After some time, Cosmos DB will be successfully deployed.
+
+<img src="images/ca3.jpg"/><br/>
  
 6. You can click “Go to resource” button and open the Cosmos DB account. Please click the “Connection String” tab and get the connection details about the Cassandra database. We will use these connection details in our Blazor application later.
- 
+
 7. We can go to the “Data Explorer” tab to create a new Keyspace now. The keyspace is like a database and tables are created under this Keyspace.
  
 8. We can create a new Keyspace now.
+
+<img src="images/key.jpg"/><br/>
 
 9. After successful creation of Keyspace, we can create a Table now. For Table creation, we must use CQL (Cassandra Query Language) commands.
 ```
@@ -26,19 +39,21 @@ CREATE TABLE IF NOT EXISTS sarathlal.addressbook
  gender text, address text, zipcode text,
  country text, state text, phone text)
  ```
- 
+ <img src="images/key1.jpg"/><br/>
 ## Step 2 - Create Blazor application.
 
 1. Please open Visual Studio 2017 (I am using a free community edition) and create a Blazor app. Choose an ASP.NET Core Web Application project template.
 
-2. We can choose Blazor (ASP.NET Core hosted) template.
- 
-3. Our solution will be ready in a moment. Please note that there are three projects created in our solution - “Client”, “Server”, and “Shared”.The client project contains all the client-side libraries and Razor Views, while the server project contains the Web API Controller and other business logic. The shared project contains the commonly shared files, like models and interfaces.
+<img src="images/ca4.jpg"/><br/>
 
-4. By default, Blazor created many files in these three projects. We can remove all the unwanted files like “Counter.cshtml”, “FetchData.cshtml”, “SurveyPrompt.cshtml” from Client project and “SampleDataController.cs” file from Server project and delete “WeatherForecast.cs” file from shared project too.
- 
+2. We can choose Blazor (ASP.NET Core hosted) template.<br/>
+ <img src="images/ca6.jpg"/><br/>
+3. Our solution will be ready in a moment. Please note that there are three projects created in our solution - “Client”, “Server”, and “Shared”.The client project contains all the client-side libraries and Razor Views, while the server project contains the Web API Controller and other business logic. The shared project contains the commonly shared files, like models and interfaces.<br/>
+<img src="images/ca5.jpg"/><br/>
+4. By default, Blazor created many files in these three projects. We can remove all the unwanted files like “Counter.cshtml”, “FetchData.cshtml”, “SurveyPrompt.cshtml” from Client project and “SampleDataController.cs” file from Server project and delete “WeatherForecast.cs” file from shared project too.<br/>
+
 5. We can add “CassandraCSharpDriver” NuGet package to Shared project and server project. Both projects need this package. This package is used for creating connectivity between Blazor app and Cassandra.
- 
+ <img src="images/ca7.jpg"/><br/>
 6. As I mentioned earlier, we will create an Address Book application. We can create AddressBook model class now. Please create a “Models” folder in the Shared project and create AddressBook class inside this folder
 
 * Please copy below code and paste to a new class.
@@ -259,6 +274,9 @@ namespace BlazorWithCassandraAddressBook.Server.DataAccess
 11. Please note we have defined all the CRUD operations inside above class. For that, we have used the Mapper object for inserting a Cassandra record and getting records from Cassandra. For update and delete we used Cassandra session Execute method.
 
 12. We can initiate this DataAccess provider class inside the “Startup” class using dependency injection. We will also call the “InitializeCassandraSession” method inCassandraInitializer class from this Startup class.
+
+<img src="images/ca8.jpg"/><br/>
+
 **Startup.cs**
 ``` 
 using BlazorWithCassandraAddressBook.Server.DataAccess;  
@@ -706,23 +724,31 @@ void Cancel()
 ```
 18. We have completed all the coding part now. We can run the Address Book app now.
  
+ <img src="images/blozar.jpg"/><br/>
+
 19. We can add a new Address Book record now.
  
- 
+ <img src="images/blazor3.jpg"/><br/>
+
 20. We can add one more record and display the records.
  
- 
+ <img src="images/blazor4.jpg"/><br/>
+
 21. We can edit one record.
  
- 
+ <img src="images/blazore3.jpg"/><br/>
+
 22. I have changed the address field.
 
 23.Now we can delete one record.
 
- 
+ <img src="images/blazor1.jpg"/><br/>
+
 24. We can check the data in Azure Cosmos DB account also. Please open Data Explorer tab and click CQL Query Text and Run. We will see one address book record created by our Blazor application.
 
+<img src="images/blozar.jpg"/><br/>
+
  
-25. In this article, we have seen how to create a Cosmos DB account with Cassandra API and we created a Blazor application with ASP.NET Core hosted template. We have used CassandraCSharpDriver NuGet package to connect Blazor with Cassandra. We used some CQL (Cassandra Query Language) commands inside our DataAccess provider class. We have seen all CRUD operations with our Address Book application.
+> In this article, we have seen how to create a Cosmos DB account with Cassandra API and we created a Blazor application with ASP.NET Core hosted template. We have used CassandraCSharpDriver NuGet package to connect Blazor with Cassandra. We used some CQL (Cassandra Query Language) commands inside our DataAccess provider class. We have seen all CRUD operations with our Address Book application.
  
 26. We will see more Blazor features in upcoming articles.
