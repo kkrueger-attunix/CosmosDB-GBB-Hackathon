@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS sarathlal.addressbook
  gender text, address text, zipcode text,
  country text, state text, phone text)
  ```
- <img src="images/key1.jpg"/><br/>
+ <img src="images/key2.jpg"/><br/>
 ## Step 2 - Create Blazor application.
 
 1. Please open Visual Studio 2017 (I am using a free community edition) and create a Blazor app. Choose an ASP.NET Core Web Application project template.
