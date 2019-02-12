@@ -16,7 +16,7 @@
  
 7. We can go to the “Data Explorer” tab to create a new Keyspace now. The keyspace is like a database and tables are created under this Keyspace.
  
-8.We can create a new Keyspace now.
+8. We can create a new Keyspace now.
 
 9. After successful creation of Keyspace, we can create a Table now. For Table creation, we must use CQL (Cassandra Query Language) commands.
 ```
