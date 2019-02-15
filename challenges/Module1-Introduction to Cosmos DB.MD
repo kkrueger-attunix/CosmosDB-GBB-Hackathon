@@ -60,7 +60,6 @@
     - Database id : Type a new database id
     - Collection id : Type a new collection id
     - Partition key : **Ticker**
-    - Storage Capacity : **Fixed(10 GB)**
     - Throughput : **500**<br/>
     Click on **OK**.<br/>
 <img src="images/partition.jpg"/><br/>
