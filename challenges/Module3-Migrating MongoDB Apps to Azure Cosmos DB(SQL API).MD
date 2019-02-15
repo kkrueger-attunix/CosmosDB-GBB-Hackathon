@@ -87,12 +87,16 @@ In this we will create Azure Function App.<br/>
 5. A function with sample default code would get created. Now, replace the sample default code with the code snippet given below.<br/>
 
     ```c#
-    using System.Net;
-    using System.Linq;
+    #r "Newtonsoft.Json"
 
-    public static HttpResponseMessage Run(HttpRequestMessage req, TraceWriter log, IEnumerable<dynamic> SelectDealsData)
+    using System.Net;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Primitives;
+    using Newtonsoft.Json;
+
+    public static async Task<IActionResult> Run(HttpRequest req, ILogger log, IEnumerable<dynamic> SelectDealsData)
     {
-        return req.CreateResponse(HttpStatusCode.OK, SelectDealsData);
+        return (ActionResult)new OkObjectResult(SelectDealsData);     
     }
     ```
 
