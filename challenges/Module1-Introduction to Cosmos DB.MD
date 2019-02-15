@@ -94,7 +94,7 @@
 15.  Now open the notepad and after the connection string add the text **Database=mynewdb**.<br/>
 <img src="images/notepad.jpg"/><br/>   
 16.  Then go back to the **Target information** page of the Data migration tool and provide the following details.<br/>
-       - Export to: **DocumentDB-Bulk import(Single partition collections)**.<br/>
+       - Export to: **DocumentDB-Sequential Record Import (partitioned collections)** (This is different than what the screenshot below shows!<br/>
        - Connection String: Copy the entire text from the notepad and paste it here.<br/>
     <img src="images/targetinfodb.jpg"/><br/>   
     After this Click on **Verify** button to verify the connection. Then a notification blade will pop-up which says **Successfully             connected to documentDB account**.In that notification blade click on **OK**. <br/>
